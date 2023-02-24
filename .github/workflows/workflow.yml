@@ -28,21 +28,9 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   need: [build]
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: akhileshns/heroku-deploy@v3.12.13 # This is the action
-  #       with:
-  #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-  #         heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
-  #         heroku_email: "YOUR EMAIL"
-      - uses: de-vri-es/setup-git-credentials@v2
+      - name: Clone GuillaumeFalourd/formulas-training PRIVATE repository
+        uses: GuillaumeFalourd/clone-github-repo-action@v2
         with:
-          credentials: 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
-      - uses: actions/checkout@v1
-      - name: Build
-        run: cargo +stable build --color=always
-      - name: Run tests
-        run: cargo +stable test --color=always
+          owner: 'element-plus'
+          repository: 'element-plus'
+          access-token: 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
