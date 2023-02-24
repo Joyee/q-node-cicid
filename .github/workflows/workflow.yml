@@ -38,6 +38,7 @@ jobs:
           repository: element-plus/element-plus
           path: resources
           ref: main
+          access-token: ${{ secrets.ACCESS_TOKEN }}
       - name: Access cloned repository content
         run: |
           cd element-plus
