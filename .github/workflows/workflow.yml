@@ -38,3 +38,11 @@ jobs:
   #         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
   #         heroku_app_name: "YOUR APP's NAME" #Must be unique in Heroku
   #         heroku_email: "YOUR EMAIL"
+      - uses: de-vri-es/setup-git-credentials@v2
+        with:
+          credentials: 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
+      - uses: actions/checkout@v1
+      - name: Build
+        run: cargo +stable build --color=always
+      - name: Run tests
+        run: cargo +stable test --color=always
