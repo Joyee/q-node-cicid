@@ -28,12 +28,16 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm test
-      - name: Clone GuillaumeFalourd/formulas-training PRIVATE repository
-        uses: GuillaumeFalourd/clone-github-repo-action@v2
+      # This part here is cloning a second repository
+      # While cloning the repository:
+      #   - it clones the repo into the given `path`
+      #   - it checks out the branch defined at `ref`
+      - name: Clone ElementPlus repository
+        uses: actions/checkout@v2
         with:
-          owner: 'element-plus'
-          repository: 'element-plus'
-          access-token: ${{ secrets.ACCESS_TOKEN }}
+          repository: element-plus/element-plus
+          path: resources
+          ref: main
       - name: Access cloned repository content
         run: |
           cd element-plus
