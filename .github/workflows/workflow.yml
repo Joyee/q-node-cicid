@@ -33,7 +33,7 @@ jobs:
         with:
           owner: 'element-plus'
           repository: 'element-plus'
-          access-token: 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
+          access-token: ${{ secrets.ACCESS_TOKEN }}
       - name: Access cloned repository content
         run: |
           cd element-plus
