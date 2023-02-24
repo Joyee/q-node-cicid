@@ -1,0 +1,34 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.enpm-debug.log
+
+node_modules
+dist
+dist-ssr
+.fl
+*.local
+
+.vscode
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+# enpm-lock.yaml
+.enpm-debug.log
+
+# Git mergetool backup files
+*.orig
+
+# Frameless PC previous build result zip package
+previous_build_ret.tgz
